@@ -12,18 +12,35 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-cc_prebuilt_binary {
-    name: "cmake",
-    host_supported: true,
+cc_defaults {
+    name: "cmake_defaults",
 
+    host_supported: true,
     compile_multilib: "64",
-    prefer: true,
     enabled: false,
     check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+    name: "cmake",
+    defaults: ["cmake_defaults"],
+
     target: {
         linux: {
             enabled: true,
             srcs: ["bin/cmake"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "ctest",
+    defaults: ["cmake_defaults"],
+
+    target: {
+        linux: {
+            enabled: true,
+            srcs: ["bin/ctest"],
         },
     },
 }
