@@ -48,9 +48,8 @@ cc_prebuilt_binary {
 filegroup {
     name: "cmake_root",
     srcs: [
-        // not adding share/cmake-3.22/Help due to build system mishandling of files with spaces
-        "share/cmake-3.22/Modules/**/*",
-        "share/cmake-3.22/Templates/**/*",
-        "share/cmake-3.22/include/**/*",
+        // not adding share/cmake-4.1/Help due to build system mishandling of files with spaces
+        "share/cmake-4.1/Modules/**/*",
+        "share/cmake-4.1/Templates/**/*",
     ],
 }
